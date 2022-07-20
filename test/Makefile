@@ -8,11 +8,12 @@ UNITYINC = $(UNITYSRC)
 CMOCKOBJ = cmock.o
 UNITYOBJ = unity.o
 
-OBJ = func.exe
-all: $(OBJ)
+FUNCOBJ = function1.o function2.o function3.o main.o
 
-func.exe: function1.o function2.o function3.o main.o
-		$(CC)  function1.o function2.o function3.o main.o -o $(OBJ)
+
+func.exe : $(FUNCOBJ)
+	@echo Linking $@
+	$(CC) -o$@ $**
 
 
 {$(APPSRC)}.c.o ::
