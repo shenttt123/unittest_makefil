@@ -1,0 +1,23 @@
+"--endian=little" 
+
+"--cpu=ARM7TDMI" 
+
+"--fpu=None" 
+
+"-p" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\CONFIG\debugger\Microchip\AT91SAM7X256.ddf" 
+
+"--drv_verify_download" 
+
+"--semihosting" 
+
+"--device=AT91SAM7X256" 
+
+"--drv_communication=USB0" 
+
+"--drv_interface_speed=adaptive" 
+
+
+
+

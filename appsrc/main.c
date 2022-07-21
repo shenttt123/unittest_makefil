@@ -4,6 +4,6 @@
 int main(){
     start();
     int number =5;
-    printf("THe squrae root is %d\n", squareRoot(number));
+    printf("THe squrae root is %d\n", square(number));
     end();
 }

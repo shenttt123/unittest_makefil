@@ -1,5 +1,5 @@
 #include "functions.h"
 
-int squareRoot(int number){
+int square(int number){
     return number*number;
 }

@@ -1,0 +1,41 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\makefile\CMock-master\test\iar\iar_v5\srcIAR\Cstartup_SAM7.c -xcl_file C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.xcl -macro_file C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\makefile\CMock-master\test\iar\iar_v5\srcIAR\Cstartup_SAM7.c -lC C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\List\Startup -o C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\Obj\Startup --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=ARM7TDMI -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I C$:\makefile\CMock-master\test\iar\iar_v5\..\..\examples\src\ -I C$:\makefile\CMock-master\test\iar\iar_v5\incIAR\ --cpu_mode thumb -On --use_c++_inline --predef_macros C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.tmp
+  rspfile_name = C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.xcl.rsp
+
+build C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.pbi : INDEXER C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.xcl |  $
+C$:\makefile\CMock-master\test\iar\iar_v5\srcIAR\Cstartup_SAM7.c
+  flags = -out=C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.pbi -f C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.xcl
+
+build C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\cmock_demo.pbw : MAKEBROWSE C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\cmock_demo.pbd
+  flags = C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\cmock_demo.pbd -output C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\cmock_demo.pbw
+
+build C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\cmock_demo.pbd : PDBLINK C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.pbi
+  flags = -M C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\cmock_demo.pbd C$:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\BrowseInfo\Startup\Cstartup_SAM7.pbi
+

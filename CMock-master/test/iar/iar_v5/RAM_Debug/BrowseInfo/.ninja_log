@@ -1,0 +1,5 @@
+# ninja log v5
+0	386	6801337880000000	C:/makefile/CMock-master/test/iar/iar_v5/RAM_Debug/BrowseInfo/Startup/Cstartup_SAM7.xcl	b8ea0fbfe61dd4b4
+397	525	6801337883908767	C:/makefile/CMock-master/test/iar/iar_v5/RAM_Debug/BrowseInfo/Startup/Cstartup_SAM7.pbi	5b3e4b5fabe04c9c
+529	577	6801337884441919	C:/makefile/CMock-master/test/iar/iar_v5/RAM_Debug/BrowseInfo/cmock_demo.pbd	cd4e68d7c148ce82
+580	2177	6801337900227804	C:/makefile/CMock-master/test/iar/iar_v5/RAM_Debug/BrowseInfo/cmock_demo.pbw	e6eb8523fad05e73

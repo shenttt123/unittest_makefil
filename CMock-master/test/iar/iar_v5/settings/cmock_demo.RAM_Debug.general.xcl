@@ -1,0 +1,13 @@
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armPROC.dll" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armJLINK.dll" 
+
+"C:\makefile\CMock-master\test\iar\iar_v5\RAM_Debug\Exe\cmock_demo.out" 
+
+--plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armbat.dll" 
+
+--macro="C:\makefile\CMock-master\test\iar\iar_v5\Resource\SAM7_RAM.mac" 
+
+
+
+

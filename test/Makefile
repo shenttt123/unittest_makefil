@@ -21,10 +21,10 @@ func.exe : $(FUNCOBJ) $(UNITYOBJ) $(CMOCKOBJ)
 
 {$(CMOCKSRC)}.c.o ::
 	@echo Compiling $<
-	$(CC) $(NOLINKFLAG) $(NOEXFLAG) $(OUTPUT) $(INCFLAG)$(CMOCKINC) $(INCFLAG)$(UNITYINC)$<
+	$(CC) $(NOLINKFLAG) $(NOEXFLAG) $(OUTPUT) $(INCFLAG)$(CMOCKINC) $(INCFLAG) $(UNITYINC) $<
 {$(UNITYSRC)}.c.o ::
 	@echo Compiling $<
-	$(CC) $(NOLINKFLAG) $(NOEXFLAG) $(OUTPUT) $(INCFLAG)$(CMOCKINC) $(INCFLAG)$(UNITYINC)$<	
+	$(CC) $(NOLINKFLAG) $(NOEXFLAG) $(OUTPUT) $(INCFLAG)$(CMOCKINC) $(INCFLAG) $(UNITYINC) $<	
 {$(APPSRC)}.c.o ::
 	@echo Compiling $<
 	$(CC) $(NOLINKFLAG) $<
