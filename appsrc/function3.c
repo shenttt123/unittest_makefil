@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "function3.h"
 #include <stdio.h>
 
 void end(){

@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "function2.h"
 #include <stdio.h>
 
 void start(){

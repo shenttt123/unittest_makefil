@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "functions.h"
+#include "function1.h"
+#include "function2.h"
+#include "function3.h"
 
 int main(){
     start();
